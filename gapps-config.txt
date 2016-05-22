@@ -1,0 +1,7 @@
+Browser
+CMScreenCast
+CMWallpapers
+CMWeatherProvider
+CMAudioFX
+CMAccount
+Terminal
