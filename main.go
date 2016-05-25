@@ -1,6 +1,7 @@
 package main
 
 import (
+	"os"
 	"io/ioutil"
 	"net/http"
 	"encoding/json"
@@ -27,5 +28,10 @@ func main() {
 		c.Redirect(http.StatusTemporaryRedirect, "http://download.cyanogenmod.org/get/cancro-latest.zip")
 	})
 
-	app.Run("0.0.0.0:8080") // listen and server on 0.0.0.0:8080
+	port := os.Getenv("CANCRO_RESET_PORT")
+	if port == "" {
+		port = "8080"
+	}
+
+	app.Run("0.0.0.0:" + port) // listen and server on 0.0.0.0:8080
 }
